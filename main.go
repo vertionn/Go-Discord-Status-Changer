@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+  "fmt"
   "time"
   "math/rand"
   "net/http"
@@ -41,12 +41,12 @@ func main() {
     requests.Header.Set("authorization",token)
     requests.Header.Set("content-type","application/json")
     client := &http.Client{}
-    respopnse, err := client.Do(requests)
+    response, err := client.Do(requests)
     if err != nil {
       log.Fatalln(err)
     }
 
-    defer respopnse.Body.Close()
+    defer response.Body.Close()
 
 
     fmt.Printf(`%v[%v+%v] %vUpdated Status To "%v%v%v"%v`,"\u001b[32;5;34m","\u001b[32;5;37m","\u001b[32;5;34m","\u001b[32;5;37m","\u001b[32;5;34m",ooo,"\u001b[32;5;37m","\n")
